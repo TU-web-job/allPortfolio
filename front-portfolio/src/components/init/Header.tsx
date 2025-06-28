@@ -17,7 +17,7 @@ const Header = () => {
                     </svg>
                 </button>
 
-                <nav className={`md:flex md;items-center absolute md:static bg-white w-full left-0 md:w-auto md:opacity-100 transition-all duration-300 ${isOpen ? "top-16 opacity-100" : "top-[-400px] opacity-0"} `}>
+                <nav className={`md:flex md:items-center absolute md:static bg-white w-full left-0 md:w-auto md:opacity-100 transition-all duration-300 ${isOpen ? "top-16 opacity-100" : "top-[-400px] opacity-0"} `}>
                     <ul className="flex flex-col md:flex-row md:space-x-6 p-4 md:p-0">
                         <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
                         <li><Link to="/#works" onClick={() => setIsOpen(false)}>Works</Link></li>
