@@ -6,13 +6,17 @@ import Works from '../components/init/Works';
 import ContactForm from '../components/init/ContactForm';
 import Footer from '../components/init/Footer';
 
-const Home = () => {
+type HomeProps = {
+  onSelectWork: (id: string) => void;
+}
+
+const Home = ({onSelectWork} :HomeProps) => {
   return (
     <>
       <Header />
       <Main />
       <Section />
-      <Works />
+      <Works onSelectWork={onSelectWork}/>
       <ContactForm />
       <Footer />
     </>

@@ -1,4 +1,5 @@
-function Footer(){
+
+const Footer = () => {
     const FooterList = [{title: 'Top', list:'/'}, {title: 'SNS', list:'/'},{title:'Access', link:'/'}]
     return(
         <footer className="bg-gray-900 text-white py-8 px-4">

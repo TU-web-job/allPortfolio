@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     return(
-        <header className='fixed w-full bg-navy shadow z-50'>
+        <header className='fixed w-full bg-navy-200 z-50 text-blue-400'>
             <div className='max-w-6xl mx-auto flex justify-between items-center p-4'>
                 <Link to="/" className='text-xl font-bold'>Cafe Page</Link>
                 <button onClick={() => setIsOpen(!isOpen)} className='md:hidden focus:outline-none'>

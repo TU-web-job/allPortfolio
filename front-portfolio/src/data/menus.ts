@@ -31,6 +31,12 @@ export const drink: MenuItems[] = [
         name:"Fruppechino",
         price:600,
         image:"/image/cafefruppe.jpg"
+    },
+    {
+        id:6,
+        name:"Lemonade",
+        price:400,
+        image:"/image/lemonade.jpg"
     }
 ];
 

@@ -4,19 +4,23 @@ const Menu = () => {
     return(
         <div className='py-20 px-4 bg-gray text-center'>
             <h2 className="md:text-4xl text-center-3xl font-bold mb-12">Menu List</h2>
-
+            <section className='w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gray-100 py-12'>
+            <div className='max-w-6xl mx-auto px-4'>
             <h3 className='md:text-3xl text-center-3xl font-bold mb-12'>Food</h3>
-            <div className="grid gap-8 md:grid-cols-3 sm:grid-cols-2">
-                {food.map((foodItem) => (
-                    <div key={foodItem.id} className='bg-gray-100 rounded-lg shadow-md overflow-hidden'>
-                        <img src={foodItem.image} alt={foodItem.name} className='h-48 w-full object-cover' />
-                        <div className='p-4'>
-                            <h3 className='text-xl mb-2 text-center'>{foodItem.name}</h3>
-                            <p className='text-gray-600'>Price : {foodItem.price}</p>
+                <div className="grid gap-8 md:grid-cols-3 sm:grid-cols-2 ">
+                    {food.map((foodItem) => (
+                        <div key={foodItem.id} className='bg-gray-100 rounded-lg shadow-md overflow-hidden'>
+                            <img src={foodItem.image} alt={foodItem.name} className='h-48 w-full object-cover' />
+                            <div className='p-4'>
+                                <h3 className='text-xl mb-2 text-center'>{foodItem.name}</h3>
+                                <p className='text-gray-600'>Price : {foodItem.price}</p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
+            </section>
+            <section>
             <h3 className='md:text-3xl text-center-3xl font-bold mb-12 mt-20'>Drink</h3>
             <div  className="grid gap-8 md:grid-cols-3 sm:grid-cols-2">
                 {drink.map((drinkItem) => (
@@ -29,6 +33,7 @@ const Menu = () => {
                     </div>
                 ))}
             </div>
+            </section>
         </div>
     );
 };
