@@ -1,6 +1,7 @@
 import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
+import path from "path";
 
 dotenv.config();
 
@@ -23,7 +24,12 @@ async function startServer() {
             res.json(pets);
         });
 
-        app.use(express.json());
+        app.use(express.static(path.join(__dirname, "../../front-portforlio/build")));
+
+        app.get("*", (req, res) => {
+            res.sendFile(path.join(__dirname, "../../front-portfolio/build/index.html"));
+        });
+
         app.post("/pet", async (req, res) => {
             const { title, date, text, image } = req.body;
             const result = await db.collection("pets").insertOne({title, date: new Date(date), text, image});
