@@ -41,7 +41,8 @@ async function startServer() {
             console.log(`http://localhost:${port}`);
         });
     } catch(err) {
-        console.log(" Error to connect");
+        console.log(" Error to connect", err);
+        process.exit(1); 
     }
 }
 
