@@ -28,11 +28,11 @@ async function startServer() {
             res.json(pets);
         });
 
+        const frontPath = path.join(__dirname, "../front-portfolio/build");
+        app.use(express.static(frontPath));
         app.use(express.json());
-        app.use(express.static(path.join(__dirname, "../front-portfolio/build")));
-
         app.get("*", (req, res) => {
-            res.sendFile(path.join(__dirname, 'index.html'));
+            res.sendFile(path.join(frontPath, 'index.html'));
         });
 
         app.post("/pet", async (req, res) => {
