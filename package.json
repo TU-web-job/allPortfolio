@@ -2,7 +2,7 @@
     "name": "front-portfolio",
     "private": true,
     "script": {
-        "build": "cd front-portfolio && npm install && run build && cd ../back-portfolio && npm install && npm run build",
-        "start": "node back-portfolio/dist/index.js"
+        "build": "cd front-portfolio && npm install && npm run build && cd ../back-portfolio && npm install && npm run build",
+        "start": "cd back-portfolio && npm start"
     }
 }
