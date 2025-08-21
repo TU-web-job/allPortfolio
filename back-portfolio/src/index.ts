@@ -29,10 +29,10 @@ async function startServer() {
         });
 
         app.use(express.json());
-        app.use(express.static(path.join(__dirname, "../../front-portfolio/build")));
+        app.use(express.static(path.join(__dirname, "../front-portfolio/build")));
 
         app.get("*", (req, res) => {
-            res.sendFile(path.join(__dirname, "../../front-portfolio/build/index.html"));
+            res.sendFile(path.join(__dirname, "../front-portfolio/build/index.html"));
         });
 
         app.post("/pet", async (req, res) => {
