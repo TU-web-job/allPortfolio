@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { MenuItems } from '../types/MenuItems';
 
 export const drink: MenuItems[] = [
