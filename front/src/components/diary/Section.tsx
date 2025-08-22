@@ -6,16 +6,17 @@ const Section = () => {
     const [pets, setPets] = useState<PetImg[]>([]);
     const [newPet, setNewPet] = useState({title: "", date:"", text:"", image:""});
     const [showForm, setShowForm] = useState(false);
+    const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
-        fetch("http://localhost:5001/pet")
+        fetch(`${API_URL}/pet`)
         .then(res => res.json())
         .then(data => setPets(data))
         .catch(console.error);
     }, []);
 
     const handleAddPet = async () => {
-        const res = await fetch("http://localhost:5001/pet", {
+        const res = await fetch(`${API_URL}/pet`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newPet),
