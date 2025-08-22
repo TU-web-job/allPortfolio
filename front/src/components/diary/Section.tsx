@@ -8,14 +8,14 @@ const Section = () => {
     const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:5001/Diary")
+        fetch("http://localhost:5001/pet")
         .then(res => res.json())
         .then(data => setPets(data))
         .catch(console.error);
     }, []);
 
     const handleAddPet = async () => {
-        const res = await fetch("http://localhost:5001/Diary", {
+        const res = await fetch("http://localhost:5001/pet", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newPet),
@@ -38,7 +38,7 @@ const Section = () => {
                         </div>
                         <div className="text-left font-semibold p-2">
                             <h3>Title : {item.title}</h3>
-                            <label>Date : {item.date.toLocaleDateString()}</label>
+                            <label>Date : {new Date(item.date).toLocaleDateString()}</label>
                             <p>Description : {item.text}</p>
                         </div>
                     </div>
