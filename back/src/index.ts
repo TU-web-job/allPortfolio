@@ -28,7 +28,7 @@ async function startServer() {
             res.json(pets);
         });
 
-        const frontPath = path.join(__dirname, "../front-portfolio/build");
+        const frontPath = path.join(__dirname);
         app.use(express.static(frontPath));
         app.use(express.json());
         app.get("*", (req, res) => {
