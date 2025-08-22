@@ -1,5 +1,5 @@
 {
-    "name": "back-portfolio",
+    "name": "back",
     "type": "module",
     "main": "dist/index.js",
     "scripts": {
